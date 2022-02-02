@@ -65,11 +65,21 @@ namespace Restaurant
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-
+            if (tb_id.Text == String.Empty)
+            {
+                MessageBox.Show("Select data from table first!");
+            }
+            else
+            {
+                toggleButton();
+                toggleField();
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex >= 0)
+            {
             DataGridViewRow dr = dataGridView1.Rows[e.RowIndex];
             if (dr != null)
             {
@@ -77,6 +87,7 @@ namespace Restaurant
                 tb_name.Text = dr.Cells[1].Value.ToString();
                 tb_email.Text = dr.Cells[2].Value.ToString();
                 tb_handphone.Text = dr.Cells[3].Value.ToString();   
+            }
             }
         }
 

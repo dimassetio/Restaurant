@@ -28,27 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_type = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_detail = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cb_bank = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cb_id = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tb_number = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_price = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_detail)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cb_type
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(286, 322);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(243, 21);
-            this.comboBox1.TabIndex = 22;
+            this.cb_type.FormattingEnabled = true;
+            this.cb_type.Location = new System.Drawing.Point(286, 322);
+            this.cb_type.Name = "cb_type";
+            this.cb_type.Size = new System.Drawing.Size(243, 21);
+            this.cb_type.TabIndex = 22;
+            this.cb_type.SelectedIndexChanged += new System.EventHandler(this.cb_type_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -60,16 +63,17 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "Payment Type";
             // 
-            // dataGridView1
+            // dgv_detail
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(108, 73);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(605, 228);
-            this.dataGridView1.TabIndex = 20;
+            this.dgv_detail.AllowUserToAddRows = false;
+            this.dgv_detail.AllowUserToDeleteRows = false;
+            this.dgv_detail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_detail.Location = new System.Drawing.Point(108, 73);
+            this.dgv_detail.Name = "dgv_detail";
+            this.dgv_detail.ReadOnly = true;
+            this.dgv_detail.Size = new System.Drawing.Size(605, 228);
+            this.dgv_detail.TabIndex = 20;
+            this.dgv_detail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -91,13 +95,13 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Card Number";
             // 
-            // comboBox3
+            // cb_bank
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(286, 376);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(243, 21);
-            this.comboBox3.TabIndex = 26;
+            this.cb_bank.FormattingEnabled = true;
+            this.cb_bank.Location = new System.Drawing.Point(286, 376);
+            this.cb_bank.Name = "cb_bank";
+            this.cb_bank.Size = new System.Drawing.Size(243, 21);
+            this.cb_bank.TabIndex = 26;
             // 
             // label3
             // 
@@ -117,14 +121,16 @@
             this.button2.TabIndex = 27;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox4
+            // cb_id
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(323, 46);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(243, 21);
-            this.comboBox4.TabIndex = 29;
+            this.cb_id.FormattingEnabled = true;
+            this.cb_id.Location = new System.Drawing.Point(323, 46);
+            this.cb_id.Name = "cb_id";
+            this.cb_id.Size = new System.Drawing.Size(243, 21);
+            this.cb_id.TabIndex = 29;
+            this.cb_id.SelectedIndexChanged += new System.EventHandler(this.cb_id_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -136,32 +142,55 @@
             this.label4.TabIndex = 28;
             this.label4.Text = "Order ID";
             // 
-            // textBox1
+            // tb_number
             // 
-            this.textBox1.Location = new System.Drawing.Point(286, 350);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(243, 20);
-            this.textBox1.TabIndex = 30;
+            this.tb_number.Location = new System.Drawing.Point(286, 350);
+            this.tb_number.Name = "tb_number";
+            this.tb_number.Size = new System.Drawing.Size(243, 20);
+            this.tb_number.TabIndex = 30;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(535, 304);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 20);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Total :";
+            // 
+            // lbl_price
+            // 
+            this.lbl_price.AutoSize = true;
+            this.lbl_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_price.Location = new System.Drawing.Point(593, 304);
+            this.lbl_price.Name = "lbl_price";
+            this.lbl_price.Size = new System.Drawing.Size(43, 20);
+            this.lbl_price.TabIndex = 32;
+            this.lbl_price.Text = "Rp ,-";
             // 
             // FormPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.lbl_price);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.tb_number);
+            this.Controls.Add(this.cb_id);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cb_bank);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cb_type);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_detail);
             this.Controls.Add(this.label1);
             this.Name = "FormPayment";
             this.Text = "FormPayment";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormPayment_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_detail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,16 +198,18 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_type;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_detail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cb_bank;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cb_id;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_number;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_price;
     }
 }

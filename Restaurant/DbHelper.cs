@@ -27,6 +27,40 @@ namespace Restaurant
             return res;
         }
 
+        public int executeSqlCommand(SqlCommand cmd)
+        {
+            conn.openConn();
+            cmd.Connection = conn.getConnection();
+            int res = cmd.ExecuteNonQuery();
+            conn.closeConn();
+            return res;
+        }
+        public DataTable tableFromCommand(SqlCommand cmd)
+        {
+            DataTable dt = new DataTable();
+            conn.openConn();
+            cmd.Connection = conn.getConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            conn.closeConn();
+            return dt;
+        }
+        
+        public object executeScalar(string query, bool addDate = false, string paramName = "")
+        {
+
+            SqlConnection cnn = conn.getConnection();
+            conn.openConn();
+            SqlCommand cmd = new SqlCommand(query, conn.getConnection());
+            if (addDate)
+            {
+                cmd.Parameters.AddWithValue(paramName, DateTime.Now);
+            }
+            var res = cmd.ExecuteScalar();
+            conn.closeConn();
+            return res;
+        }
+
         public SqlDataReader read(string query)
         {
             conn.openConn();

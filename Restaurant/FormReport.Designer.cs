@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_report = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_from = new System.Windows.Forms.DateTimePicker();
+            this.dtp_to = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.chart_report = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_report)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_report)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -62,16 +62,16 @@
             this.button2.Text = "Generate";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgv_report
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(117, 119);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(605, 153);
-            this.dataGridView1.TabIndex = 31;
+            this.dgv_report.AllowUserToAddRows = false;
+            this.dgv_report.AllowUserToDeleteRows = false;
+            this.dgv_report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_report.Location = new System.Drawing.Point(117, 119);
+            this.dgv_report.Name = "dgv_report";
+            this.dgv_report.ReadOnly = true;
+            this.dgv_report.Size = new System.Drawing.Size(605, 153);
+            this.dgv_report.TabIndex = 31;
             // 
             // label1
             // 
@@ -83,19 +83,21 @@
             this.label1.TabIndex = 30;
             this.label1.Text = "Form Report";
             // 
-            // dateTimePicker1
+            // dtp_from
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(308, 57);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 34;
+            this.dtp_from.Location = new System.Drawing.Point(308, 57);
+            this.dtp_from.Name = "dtp_from";
+            this.dtp_from.Size = new System.Drawing.Size(200, 20);
+            this.dtp_from.TabIndex = 34;
+            this.dtp_from.ValueChanged += new System.EventHandler(this.dtp_from_ValueChanged);
             // 
-            // dateTimePicker2
+            // dtp_to
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(308, 83);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 36;
+            this.dtp_to.Location = new System.Drawing.Point(308, 83);
+            this.dtp_to.Name = "dtp_to";
+            this.dtp_to.Size = new System.Drawing.Size(200, 20);
+            this.dtp_to.TabIndex = 36;
+            this.dtp_to.ValueChanged += new System.EventHandler(this.dtp_from_ValueChanged);
             // 
             // label2
             // 
@@ -107,39 +109,40 @@
             this.label2.TabIndex = 35;
             this.label2.Text = "To";
             // 
-            // chart1
+            // chart_report
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(117, 299);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(605, 179);
-            this.chart1.TabIndex = 37;
-            this.chart1.Text = "chart1";
+            chartArea3.Name = "ChartArea1";
+            this.chart_report.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart_report.Legends.Add(legend3);
+            this.chart_report.Location = new System.Drawing.Point(117, 299);
+            this.chart_report.Name = "chart_report";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Income";
+            this.chart_report.Series.Add(series3);
+            this.chart_report.Size = new System.Drawing.Size(605, 179);
+            this.chart_report.TabIndex = 37;
+            this.chart_report.Text = "chart1";
             // 
             // FormReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 517);
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.chart_report);
+            this.Controls.Add(this.dtp_to);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtp_from);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_report);
             this.Controls.Add(this.label1);
             this.Name = "FormReport";
             this.Text = "FormReport";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.Load += new System.EventHandler(this.FormReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_report)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_report)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,11 +151,11 @@
         #endregion
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_report;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtp_from;
+        private System.Windows.Forms.DateTimePicker dtp_to;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_report;
     }
 }

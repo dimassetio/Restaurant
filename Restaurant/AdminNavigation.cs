@@ -39,5 +39,35 @@ namespace Restaurant
             formManageEmployee.Show();
             this.Hide();
         }
+
+        private void btn_menu_Click(object sender, EventArgs e)
+        {
+            FormMenu formMenu = new FormMenu();
+            formMenu.Show();    
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormOrder order = new FormOrder();
+            order.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormPayment payment = new FormPayment();
+            payment.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormViewOrder formViewOrder = new FormViewOrder();
+            formViewOrder.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FormReport report = new FormReport();
+            report.Show();
+        }
     }
 }
